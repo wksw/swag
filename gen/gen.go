@@ -50,12 +50,12 @@ func (g *Gen) Build(searchDir, mainAPIFile, swaggerConfDir, propNamingStrategy s
 	swaggerYAML.Write(y)
 
 	packageTemplate.Execute(docs, struct {
-		Timestamp time.Time
-		Doc       string
+		Timestamp   time.Time
+		Doc         string
 		SwaggerJSON string
 	}{
-		Timestamp: time.Now(),
-		Doc:       "`" + string(b) + "`",
+		Timestamp:   time.Now(),
+		Doc:         "`" + string(b) + "`",
 		SwaggerJSON: path.Join(swaggerConfDir, "swagger.json"),
 	})
 
